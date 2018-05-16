@@ -1,4 +1,4 @@
-package org.example.mongodb.model;
+package com.example.people.user.models;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
@@ -9,19 +9,23 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
 
     @Id
-    private String id;
+    private String _userID;
 
     private String name;
 
-    private int age;
+    private String phone_number;
+
+    private String email_address;
 
 
     public User() {
     }
 
-    public User(String name, int age) {
-        this.name = name;
-        this.age = age;
+    public User(String user_id, String username, String phone, String email) {
+       this._userID = user_id;
+       this.name = username;
+       this.phone_number = phone;
+       this.email_address = email;
     }
 
 
@@ -29,7 +33,7 @@ public class User {
     public String toString() {
         return "User{" +
                 ", name='" + name + '\'' +
-                ", Age=" + age +
+                ", phone=" + phone_number +
                 '}';
     }
 
