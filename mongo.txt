@@ -1,0 +1,6 @@
+Four steps to mongo queries - 
+
+1. Declare an interface extending Repository (or subtypes), type it to the domain class and ID type
+2. Declare query methods on the interface
+3. Instruct spring to create instances for those interfaces
+4. Inject the repository instance 

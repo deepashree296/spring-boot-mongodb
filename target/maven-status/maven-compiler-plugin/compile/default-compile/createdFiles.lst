@@ -1,0 +1,9 @@
+com/example/people/user/repositories/PeopleBaseRepository.class
+com/example/people/user/services/UserService.class
+com/example/people/user/services/UserServiceImpl.class
+com/example/people/user/domains/Connections.class
+com/example/people/user/repositories/package-info.class
+com/example/people/user/domains/User.class
+com/example/people/user/repositories/UserMongoRepository.class
+com/example/people/Application.class
+com/example/people/user/controllers/UserController.class

@@ -1,6 +1,6 @@
 package com.example.people.user.services;
 
-import com.example.people.user.models.User;
+import com.example.people.user.domains.User;
 import com.example.people.user.repositories.UserMongoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,5 +26,11 @@ public class UserServiceImpl implements UserService {
     public User createUser(User newUser) {
         userRepository.save(newUser);
         return newUser;
+    }
+
+    @Override
+    public User getUserByNumber(String phoneNumber) {
+        User user = userRepository.findByPhoneNumber(phoneNumber);
+        return user ;
     }
 }

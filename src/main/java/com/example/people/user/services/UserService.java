@@ -1,6 +1,6 @@
 package com.example.people.user.services;
 
-import com.example.people.user.models.User;
+import com.example.people.user.domains.User;
 
 import java.util.List;
 
@@ -11,6 +11,9 @@ public interface UserService {
 
     // create a people user with no connection data
     User createUser(User newUser);
+
+    // find user by phone number
+    User getUserByNumber(String phoneNumber);
 
 
 

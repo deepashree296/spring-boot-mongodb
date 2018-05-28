@@ -1,12 +1,11 @@
 package com.example.people.user.controllers;
 
-import com.example.people.user.models.User;
+import com.example.people.user.domains.User;
 import com.example.people.user.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -40,6 +39,17 @@ public class UserController {
         User newUser = userService.createUser(user);
         return  new ResponseEntity<User>(newUser, HttpStatus.CREATED);
 
+    }
+
+
+    @RequestMapping(
+            value="/getUser/{number}",
+            method=RequestMethod.GET,
+            produces=MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<User> findUserByNumber(@PathVariable("number") String number) {
+        User user = userService.getUserByNumber(number);
+        return new ResponseEntity<User>(user, HttpStatus.OK);
     }
 
 }
